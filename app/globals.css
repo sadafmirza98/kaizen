@@ -57,7 +57,7 @@
 
 :root {
   /* Kaizen Zen Palette */
-  --parchment: oklch(0.96 0.012 85);
+  --parchment: oklch(0.90 0.012 85);
   --ink: oklch(0.18 0.008 60);
   --ink-light: oklch(0.38 0.008 60);
   --moss: oklch(0.42 0.06 145);
@@ -65,27 +65,27 @@
   --cedar: oklch(0.45 0.06 50);
   --stone: oklch(0.72 0.008 60);
   --gold: oklch(0.72 0.08 80);
-  --paper: oklch(0.98 0.008 85);
-  --shadow: oklch(0.18 0.008 60 / 0.08);
+  --paper: oklch(0.93 0.008 85);
+  --shadow: oklch(0.18 0.008 60 / 0.10);
 
-  /* shadcn tokens mapped to zen palette */
-  --background: oklch(0.97 0.010 85);
-  --foreground: oklch(0.18 0.008 60);
-  --card: oklch(0.99 0.006 85);
-  --card-foreground: oklch(0.18 0.008 60);
-  --popover: oklch(0.99 0.006 85);
-  --popover-foreground: oklch(0.18 0.008 60);
-  --primary: oklch(0.18 0.008 60);
-  --primary-foreground: oklch(0.97 0.010 85);
-  --secondary: oklch(0.93 0.012 85);
-  --secondary-foreground: oklch(0.28 0.008 60);
-  --muted: oklch(0.93 0.010 85);
-  --muted-foreground: oklch(0.52 0.008 60);
-  --accent: oklch(0.90 0.015 85);
-  --accent-foreground: oklch(0.22 0.008 60);
+  /* shadcn tokens — softer, less blinding light mode */
+  --background: oklch(0.88 0.010 82);
+  --foreground: oklch(0.16 0.008 60);
+  --card: oklch(0.91 0.008 82);
+  --card-foreground: oklch(0.16 0.008 60);
+  --popover: oklch(0.91 0.008 82);
+  --popover-foreground: oklch(0.16 0.008 60);
+  --primary: oklch(0.16 0.008 60);
+  --primary-foreground: oklch(0.90 0.010 85);
+  --secondary: oklch(0.84 0.012 82);
+  --secondary-foreground: oklch(0.24 0.008 60);
+  --muted: oklch(0.84 0.010 82);
+  --muted-foreground: oklch(0.48 0.008 60);
+  --accent: oklch(0.82 0.015 82);
+  --accent-foreground: oklch(0.20 0.008 60);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.88 0.010 85);
-  --input: oklch(0.92 0.010 85);
+  --border: oklch(0.78 0.010 82);
+  --input: oklch(0.82 0.010 82);
   --ring: oklch(0.42 0.06 145);
   --radius: 0.5rem;
   --sidebar: oklch(0.20 0.010 60);
@@ -402,7 +402,7 @@ html {
 
 /* Cinematic page body — warm parchment base */
 body {
-  background-color: oklch(0.97 0.010 85);
+  background-color: oklch(0.88 0.010 82);
 }
 
 /* Atmospheric section transitions */

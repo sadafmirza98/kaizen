@@ -24,7 +24,6 @@ const toolSubItems = [
   { href: "/tools?category=formatters", icon: AlignLeft, label: "Formatters" },
   { href: "/tools?category=generators", icon: Sparkles, label: "Generators" },
   { href: "/tools?category=web", icon: Globe, label: "Web Tools" },
-  { href: "/tools?category=data", icon: Database, label: "Data Tools" },
 ];
 
 export function Sidebar() {
@@ -85,7 +84,7 @@ export function Sidebar() {
           style={{ border: "1px solid oklch(1 0 0 / 0.20)", background: "oklch(0.22 0.008 60)" }}
         >
           <Image
-            src="/favicon.png"
+            src="/logo.png"
             alt="Kaizen"
             width={36}
             height={36}
