@@ -158,7 +158,7 @@ function QuoteWidget() {
           <Quote className="w-3.5 h-3.5" style={{ color: "oklch(0.65 0.008 80)" }} />
           <span style={{ color: "oklch(0.65 0.008 80)", fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase", fontWeight: 500 }}>Today&apos;s Quote</span>
         </div>
-        <blockquote className="italic mb-3" style={{ fontFamily: "var(--font-heading)", color: "oklch(0.93 0.008 85)", fontSize: 14, lineHeight: 1.6 }}>
+        <blockquote className="italic mb-3" style={{ fontFamily: "var(--font-heading)", color: "oklch(0.82 0.03 70)", fontSize: 14, lineHeight: 1.6 }}>
           &ldquo;{quote.text}&rdquo;
         </blockquote>
         <cite style={{ color: "oklch(0.65 0.008 80)", fontSize: 12 }} className="not-italic">— {quote.author}</cite>

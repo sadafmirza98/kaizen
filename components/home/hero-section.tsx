@@ -30,7 +30,7 @@ export function HeroSection() {
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(100deg, oklch(0.10 0.008 60 / 0.82) 0%, oklch(0.12 0.010 70 / 0.55) 45%, oklch(0.10 0.008 60 / 0.15) 100%)",
+          background: "linear-gradient(100deg, oklch(0.10 0.008 60 / 0.55) 0%, oklch(0.12 0.010 70 / 0.30) 45%, oklch(0.10 0.008 60 / 0.05) 100%)",
           zIndex: 1,
         }}
       />
@@ -104,7 +104,7 @@ export function HeroSection() {
             href="/tools"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 hover:-translate-y-0.5"
             style={{
-              background: "oklch(0.92 0.008 85)",
+              background: "oklch(0.88 0.018 75)",
               color: "oklch(0.14 0.008 60)",
               boxShadow: "0 2px 12px oklch(0 0 0 / 0.3)",
             }}

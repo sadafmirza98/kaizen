@@ -65,7 +65,7 @@
   --cedar: oklch(0.45 0.06 50);
   --stone: oklch(0.72 0.008 60);
   --gold: oklch(0.72 0.08 80);
-  --paper: oklch(0.93 0.008 85);
+  --paper: oklch(0.82 0.03 70);
   --shadow: oklch(0.18 0.008 60 / 0.10);
 
   /* shadcn tokens — softer, less blinding light mode */
@@ -220,7 +220,7 @@
   }
 
   .bg-parchment {
-    background-color: oklch(0.97 0.010 85);
+    background-color: oklch(0.82 0.03 70);
   }
 
   .bg-paper {
@@ -541,7 +541,7 @@ body.focus-mode .focus-exit-pill {
 
 /* Dark Theme - Only affects mid section */
 body:not(.dark-theme) .tools-panel-container {
-  background: oklch(0.97 0.010 85) !important;
+  background: oklch(0.82 0.03 70) !important;
 }
 
 body:not(.dark-theme) .tools-panel-container .tool-card {

@@ -39,7 +39,7 @@ export function ToolsGrid() {
       {/* Section background — slightly different from hero to create depth */}
       <div
         className="absolute inset-0"
-        style={{ background: "oklch(0.97 0.010 85)" }}
+        style={{ background: "oklch(0.82 0.03 70)" }}
       />
       {/* Subtle top texture */}
       <div

@@ -24,7 +24,7 @@ export function BottomSections() {
   const isDark = theme === "dark";
 
   // Token sets
-  const panelBg      = isDark ? "oklch(0.17 0.008 60)"        : "oklch(0.97 0.010 85)";
+  const panelBg      = isDark ? "oklch(0.17 0.008 60)"        : "oklch(0.82 0.03 70)";
   const panelBorder  = isDark ? "oklch(1 0 0 / 0.09)"         : "oklch(0.88 0.010 82 / 0.6)";
   const headerBorder = isDark ? "oklch(1 0 0 / 0.08)"         : "oklch(0.88 0.010 82 / 0.6)";
   const titleColor   = isDark ? "oklch(0.90 0.008 85)"        : "oklch(0.22 0.008 60)";
@@ -37,10 +37,10 @@ export function BottomSections() {
   const iconColor    = isDark ? "oklch(0.58 0.008 65)"        : "oklch(0.42 0.008 60)";
   const footerBorder = isDark ? "oklch(1 0 0 / 0.08)"         : "oklch(0.88 0.010 82 / 0.5)";
   const footerLink   = isDark ? "oklch(0.60 0.008 65)"        : "oklch(0.38 0.008 60)";
-  const topicBg      = isDark ? "oklch(0.20 0.008 60)"        : "oklch(0.94 0.010 82)";
+  const topicBg      = isDark ? "oklch(0.20 0.008 60)"        : "oklch(0.99 0.006 85)";
   const topicBorder  = isDark ? "oklch(1 0 0 / 0.10)"         : "oklch(0.88 0.010 80 / 0.5)";
   const topicHover   = isDark ? "oklch(0.23 0.008 60)"        : "oklch(0.91 0.012 80)";
-  const topicIconBg  = isDark ? "oklch(0.25 0.008 60)"        : "oklch(0.88 0.012 80)";
+  const topicIconBg  = isDark ? "oklch(0.25 0.008 60)"        : "oklch(0.93 0.01 82)";
   const topicIconBdr = isDark ? "oklch(1 0 0 / 0.10)"         : "oklch(0.82 0.010 78 / 0.5)";
 
   return (

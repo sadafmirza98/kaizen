@@ -28,7 +28,7 @@ export function PlaybookSection() {
             View all topics <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 items-stretch">
           {playbookTopics.map((topic, i) => {
             const Icon = iconMap[topic.icon] ?? Server;
             return (
@@ -38,16 +38,17 @@ export function PlaybookSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
+                className="h-full"
               >
-                <Link href={`/playbook/${topic.id}`} className="group block">
-                  <div className="relative bg-card border border-border rounded-xl p-4 transition-all duration-300 hover:-translate-y-0.5 overflow-hidden">
+                <Link href={`/playbook/${topic.id}`} className="group block h-full">
+                  <div className="relative h-full bg-card border border-border rounded-xl p-5 transition-all duration-300 hover:-translate-y-0.5 overflow-hidden" style={{ minHeight: 140 }}>
                     <div className="absolute inset-0 bg-gradient-to-br from-amber-50/0 group-hover:from-amber-50/20 to-transparent transition-all duration-500 rounded-xl" />
-                    <div className="relative w-8 h-8 rounded-lg bg-muted border border-border flex items-center justify-center mb-3 group-hover:bg-accent transition-colors">
-                      <Icon className="w-3.5 h-3.5 text-muted-foreground group-hover:text-foreground transition-colors" />
+                    <div className="relative w-10 h-10 rounded-lg bg-muted border border-border flex items-center justify-center mb-4 group-hover:bg-accent transition-colors">
+                      <Icon className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
                     </div>
                     <div className="relative">
-                      <h3 className="text-xs font-medium text-foreground mb-1 leading-snug">{topic.title}</h3>
-                      <p className="text-[10px] text-muted-foreground/70 leading-relaxed">{topic.description}</p>
+                      <h3 className="text-sm font-semibold text-foreground mb-1.5 leading-snug">{topic.title}</h3>
+                      <p className="text-xs text-muted-foreground leading-relaxed">{topic.description}</p>
                     </div>
                   </div>
                 </Link>

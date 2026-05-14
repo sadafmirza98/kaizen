@@ -72,7 +72,7 @@ function ToolsContent() {
         {/* Overlay */}
         <div
           className="absolute inset-0"
-          style={{ background: "linear-gradient(100deg, oklch(0.10 0.018 90 / 0.88) 0%, oklch(0.12 0.015 85 / 0.70) 60%, oklch(0.10 0.012 80 / 0.50) 100%)" }}
+          style={{ background: "linear-gradient(100deg, oklch(0.10 0.018 90 / 0.55) 0%, oklch(0.12 0.015 85 / 0.30) 60%, oklch(0.10 0.012 80 / 0.10) 100%)" }}
         />
         {/* Bottom fade */}
         <div
@@ -90,7 +90,7 @@ function ToolsContent() {
           <h1
             style={{
               fontFamily: "var(--font-heading)",
-              color: "oklch(0.96 0.008 85)",
+              color: "oklch(0.88 0.018 75)",
               fontSize: "clamp(36px, 4.5vw, 54px)",
               fontWeight: 700,
               lineHeight: 1.05,
@@ -226,7 +226,7 @@ function ToolsContent() {
                       </div>
                       {/* Text */}
                       <div className="relative">
-                        <h3 style={{ color: "oklch(0.92 0.008 85)", fontSize: 16, fontWeight: 600, marginBottom: 8, lineHeight: 1.3 }}>
+                        <h3 style={{ color: "oklch(0.86 0.018 75)", fontSize: 16, fontWeight: 600, marginBottom: 8, lineHeight: 1.3 }}>
                           {tool.name}
                         </h3>
                         <p className="line-clamp-2" style={{ color: "oklch(0.52 0.008 62)", fontSize: 13.5, lineHeight: 1.65 }}>

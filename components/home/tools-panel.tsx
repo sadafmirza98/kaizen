@@ -25,7 +25,7 @@ export function ToolsPanel() {
         transition={{ duration: 0.6, delay: 0.3 }}
         className="tools-panel-container rounded-2xl overflow-hidden"
         style={{
-          background: "oklch(0.97 0.010 85)",
+          background: "oklch(0.82 0.03 70)",
           boxShadow: "0 4px 32px oklch(0 0 0 / 0.35), 0 1px 0 oklch(1 0 0 / 0.08)",
         }}
       >
