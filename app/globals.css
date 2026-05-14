@@ -506,13 +506,7 @@ html {
 body.focus-mode .right-widgets,
 body.focus-mode .floating-panels,
 body.focus-mode .bottom-sections {
-  opacity: 0.08;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-body.focus-mode .right-widgets:hover {
-  opacity: 0.25;
+  display: none !important;
 }
 
 /* Sidebar in focus mode: collapse to slim icon rail, always accessible */
@@ -531,32 +525,10 @@ body.focus-mode aside .sidebar-logo-text {
   display: none !important;
 }
 
-/* Keep focus toggle and settings icons visible and clickable */
-body.focus-mode aside .sidebar-focus-section,
-body.focus-mode aside .sidebar-settings {
+/* Keep focus toggle visible and clickable */
+body.focus-mode aside .sidebar-focus-section {
   pointer-events: auto !important;
   opacity: 1 !important;
-}
-
-/* ═══════════════════════════════════════════
-   DARK THEME — global text contrast fixes
-   Ensures all text is readable on dark backgrounds
-═══════════════════════════════════════════ */
-
-/* Right widgets light-mode cards need inversion in dark theme */
-body.dark-theme .right-widgets-light-card {
-  background: oklch(0.18 0.008 60) !important;
-  border-color: oklch(1 0 0 / 0.08) !important;
-}
-
-/* Hero section headings are already light — no change needed */
-
-/* Footer text in dark theme */
-body.dark-theme footer p {
-  color: oklch(0.52 0.008 60) !important;
-}
-body.dark-theme footer span {
-  color: oklch(0.65 0.008 60) !important;
 }
 
 /* Floating focus-exit pill shown in focus mode */

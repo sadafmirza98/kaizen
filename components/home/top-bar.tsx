@@ -4,33 +4,17 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { Search, Command, Sun, Moon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { tools } from "@/lib/tools-data";
+import { useTheme } from "@/lib/theme-context";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function TopBar() {
   const [query, setQuery] = useState("");
   const [focused, setFocused] = useState(false);
-  // Initialise from localStorage synchronously to avoid flash + setState-in-effect warning
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof window === "undefined") return true;
-    const saved = localStorage.getItem("theme");
-    return saved !== "light"; // default dark
-  });
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === "dark";
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
-
-  // Apply dark-theme class on mount and whenever isDark changes
-  useEffect(() => {
-    if (isDark) {
-      document.body.classList.add("dark-theme");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.body.classList.remove("dark-theme");
-      localStorage.setItem("theme", "light");
-    }
-  }, [isDark]);
-
-  const toggleTheme = useCallback(() => setIsDark((v) => !v), []);
 
   // Cmd+K / Ctrl+K — focus the search input
   useEffect(() => {

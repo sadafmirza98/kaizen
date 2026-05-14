@@ -1,116 +1,65 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Search } from "lucide-react";
 import { ZenScene } from "@/components/three/zen-scene-client";
-import { WorkspaceScene } from "./workspace-scene";
 
 function openSearch() {
-  window.dispatchEvent(new Event("open-search"));
+  globalThis.window?.dispatchEvent(new Event("open-search"));
 }
 
 export function HeroSection() {
   return (
     <section className="relative overflow-hidden shrink-0" style={{ height: "clamp(340px, 42vh, 480px)" }}>
 
-      {/* ── CINEMATIC BACKGROUND ── */}
-      {/* Deep atmospheric base — dark forest/garden tones */}
+      {/* ── HERO BACKGROUND IMAGE ── */}
+      {/* Hero background image — /public/hero.bg.png */}
+      <Image
+        src="/hero.bg.png"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center"
+        style={{ zIndex: 0 }}
+      />
+
+      {/* Dark overlay so text stays readable over any image */}
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(135deg, oklch(0.18 0.015 80) 0%, oklch(0.22 0.020 90) 30%, oklch(0.28 0.018 100) 60%, oklch(0.20 0.012 75) 100%)",
+          background: "linear-gradient(100deg, oklch(0.10 0.008 60 / 0.82) 0%, oklch(0.12 0.010 70 / 0.55) 45%, oklch(0.10 0.008 60 / 0.15) 100%)",
+          zIndex: 1,
         }}
       />
 
-      {/* Layered atmospheric depth */}
-      {/* Far background — misty forest green */}
+      {/* Bottom fade — blends into the tools panel below */}
       <div
-        className="absolute inset-0"
+        className="absolute bottom-0 inset-x-0 h-32 pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse at 65% 30%, oklch(0.35 0.04 140 / 0.5) 0%, oklch(0.22 0.02 120 / 0.3) 40%, transparent 70%)",
-        }}
-      />
-      {/* Mid — warm amber light source (lantern/sun) */}
-      <div
-        className="absolute"
-        style={{
-          top: "5%", right: "18%",
-          width: 320, height: 320,
-          background: "radial-gradient(circle, oklch(0.72 0.10 80 / 0.22) 0%, oklch(0.55 0.08 75 / 0.12) 40%, transparent 70%)",
-          filter: "blur(20px)",
-        }}
-      />
-      {/* Shoji circle glow */}
-      <div
-        className="absolute"
-        style={{
-          top: "-10%", right: "10%",
-          width: 420, height: 420,
-          borderRadius: "50%",
-          background: "radial-gradient(circle, oklch(0.60 0.06 90 / 0.18) 0%, oklch(0.40 0.04 100 / 0.10) 50%, transparent 70%)",
-          filter: "blur(8px)",
-        }}
-      />
-      {/* Shoji circle border */}
-      <div
-        className="absolute pointer-events-none"
-        style={{
-          top: "-8%", right: "11%",
-          width: 400, height: 400,
-          borderRadius: "50%",
-          border: "1px solid oklch(1 0 0 / 0.08)",
-        }}
-      />
-      <div
-        className="absolute pointer-events-none"
-        style={{
-          top: "-4%", right: "13%",
-          width: 360, height: 360,
-          borderRadius: "50%",
-          border: "1px solid oklch(1 0 0 / 0.05)",
+          background: "linear-gradient(to top, oklch(0.13 0.008 60) 0%, transparent 100%)",
+          zIndex: 2,
         }}
       />
 
-      {/* Ground/desk shadow at bottom */}
+      {/* Subtle grain overlay */}
       <div
-        className="absolute bottom-0 inset-x-0 h-32"
-        style={{
-          background: "linear-gradient(to top, oklch(0.10 0.008 60 / 0.8) 0%, transparent 100%)",
-        }}
-      />
-
-      {/* Fog layers */}
-      <div
-        className="absolute bottom-0 inset-x-0 h-48 pointer-events-none"
-        style={{
-          background: "linear-gradient(to top, oklch(0.14 0.010 70 / 0.6) 0%, oklch(0.20 0.012 80 / 0.2) 50%, transparent 100%)",
-        }}
-      />
-
-      {/* Subtle grain */}
-      <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")`,
+          zIndex: 3,
         }}
       />
 
-      {/* Three.js particles */}
-      <ZenScene particleColor="#a09070" showSakura particleCount={35} />
-
-      {/* Workspace scene — right side, blended in */}
-      <div className="absolute right-0 top-0 bottom-0 w-[55%] pointer-events-none">
-        <WorkspaceScene />
-        {/* Left blend */}
-        <div
-          className="absolute inset-y-0 left-0 w-48 pointer-events-none"
-          style={{ background: "linear-gradient(to right, oklch(0.18 0.015 80) 0%, transparent 100%)" }}
-        />
+      {/* Three.js sakura particles on top */}
+      <div className="absolute inset-0" style={{ zIndex: 4 }}>
+        <ZenScene particleColor="#c8a87a" showSakura particleCount={28} />
       </div>
 
       {/* ── CONTENT ── */}
-      <div className="relative z-10 h-full flex flex-col justify-center px-10 lg:px-14 max-w-[52%]">
+      <div className="relative h-full flex flex-col justify-center px-10 lg:px-14 max-w-[52%]" style={{ zIndex: 5 }}>
 
         {/* Heading */}
         <motion.h1

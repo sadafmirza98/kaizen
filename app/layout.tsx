@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Lora } from "next/font/google";
 import "./globals.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { CursorGlow } from "@/components/ui/cursor-glow";
+import { ThemeProvider } from "@/lib/theme-context";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -80,9 +81,11 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <CursorGlow />
-        <TooltipProvider delayDuration={300}>
-          {children}
-        </TooltipProvider>
+        <ThemeProvider>
+          <TooltipProvider delayDuration={300}>
+            {children}
+          </TooltipProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
