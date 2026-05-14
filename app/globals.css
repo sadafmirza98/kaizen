@@ -1,0 +1,713 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-heading);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Kaizen custom colors */
+  --color-parchment: var(--parchment);
+  --color-ink: var(--ink);
+  --color-ink-light: var(--ink-light);
+  --color-moss: var(--moss);
+  --color-sage: var(--sage);
+  --color-cedar: var(--cedar);
+  --color-stone: var(--stone);
+  --color-gold: var(--gold);
+  --color-paper: var(--paper);
+  --color-shadow: var(--shadow);
+}
+
+:root {
+  /* Kaizen Zen Palette */
+  --parchment: oklch(0.96 0.012 85);
+  --ink: oklch(0.18 0.008 60);
+  --ink-light: oklch(0.38 0.008 60);
+  --moss: oklch(0.42 0.06 145);
+  --sage: oklch(0.58 0.05 145);
+  --cedar: oklch(0.45 0.06 50);
+  --stone: oklch(0.72 0.008 60);
+  --gold: oklch(0.72 0.08 80);
+  --paper: oklch(0.98 0.008 85);
+  --shadow: oklch(0.18 0.008 60 / 0.08);
+
+  /* shadcn tokens mapped to zen palette */
+  --background: oklch(0.97 0.010 85);
+  --foreground: oklch(0.18 0.008 60);
+  --card: oklch(0.99 0.006 85);
+  --card-foreground: oklch(0.18 0.008 60);
+  --popover: oklch(0.99 0.006 85);
+  --popover-foreground: oklch(0.18 0.008 60);
+  --primary: oklch(0.18 0.008 60);
+  --primary-foreground: oklch(0.97 0.010 85);
+  --secondary: oklch(0.93 0.012 85);
+  --secondary-foreground: oklch(0.28 0.008 60);
+  --muted: oklch(0.93 0.010 85);
+  --muted-foreground: oklch(0.52 0.008 60);
+  --accent: oklch(0.90 0.015 85);
+  --accent-foreground: oklch(0.22 0.008 60);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.88 0.010 85);
+  --input: oklch(0.92 0.010 85);
+  --ring: oklch(0.42 0.06 145);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.20 0.010 60);
+  --sidebar-foreground: oklch(0.88 0.008 85);
+  --sidebar-primary: oklch(0.72 0.08 80);
+  --sidebar-primary-foreground: oklch(0.18 0.008 60);
+  --sidebar-accent: oklch(0.28 0.010 60);
+  --sidebar-accent-foreground: oklch(0.88 0.008 85);
+  --sidebar-border: oklch(0.30 0.008 60 / 0.5);
+  --sidebar-ring: oklch(0.72 0.08 80);
+}
+
+.dark {
+  --background: oklch(0.14 0.008 60);
+  --foreground: oklch(0.92 0.008 85);
+  --card: oklch(0.18 0.008 60);
+  --card-foreground: oklch(0.92 0.008 85);
+  --popover: oklch(0.18 0.008 60);
+  --popover-foreground: oklch(0.92 0.008 85);
+  --primary: oklch(0.88 0.010 85);
+  --primary-foreground: oklch(0.18 0.008 60);
+  --secondary: oklch(0.24 0.008 60);
+  --secondary-foreground: oklch(0.88 0.008 85);
+  --muted: oklch(0.24 0.008 60);
+  --muted-foreground: oklch(0.62 0.008 60);
+  --accent: oklch(0.26 0.010 60);
+  --accent-foreground: oklch(0.88 0.008 85);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 8%);
+  --input: oklch(1 0 0 / 10%);
+  --ring: oklch(0.58 0.05 145);
+  --sidebar: oklch(0.12 0.008 60);
+  --sidebar-foreground: oklch(0.88 0.008 85);
+  --sidebar-primary: oklch(0.72 0.08 80);
+  --sidebar-primary-foreground: oklch(0.18 0.008 60);
+  --sidebar-accent: oklch(0.20 0.008 60);
+  --sidebar-accent-foreground: oklch(0.88 0.008 85);
+  --sidebar-border: oklch(1 0 0 / 8%);
+  --sidebar-ring: oklch(0.72 0.08 80);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+/* Kaizen custom utilities — all written as plain CSS (no cross-utility @apply in Tailwind v4) */
+@layer utilities {
+  .paper-texture {
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+
+  .ink-shadow {
+    box-shadow:
+      0 1px 3px oklch(0.18 0.008 60 / 0.06),
+      0 4px 16px oklch(0.18 0.008 60 / 0.04),
+      0 0 0 1px oklch(0.18 0.008 60 / 0.04);
+  }
+
+  .ink-shadow-md {
+    box-shadow:
+      0 2px 8px oklch(0.18 0.008 60 / 0.08),
+      0 8px 32px oklch(0.18 0.008 60 / 0.06),
+      0 0 0 1px oklch(0.18 0.008 60 / 0.05);
+  }
+
+  .ink-shadow-lg {
+    box-shadow:
+      0 4px 16px oklch(0.18 0.008 60 / 0.10),
+      0 16px 48px oklch(0.18 0.008 60 / 0.08),
+      0 0 0 1px oklch(0.18 0.008 60 / 0.06);
+  }
+
+  /* zen-card: expanded inline — no cross-utility @apply */
+  .zen-card {
+    background-color: var(--card);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--border);
+    border-radius: var(--radius-xl, 0.75rem);
+    box-shadow:
+      0 1px 3px oklch(0.18 0.008 60 / 0.06),
+      0 4px 16px oklch(0.18 0.008 60 / 0.04),
+      0 0 0 1px oklch(0.18 0.008 60 / 0.04);
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+
+  /* zen-card-hover: expanded inline */
+  .zen-card-hover {
+    background-color: var(--card);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--border);
+    border-radius: var(--radius-xl, 0.75rem);
+    box-shadow:
+      0 1px 3px oklch(0.18 0.008 60 / 0.06),
+      0 4px 16px oklch(0.18 0.008 60 / 0.04),
+      0 0 0 1px oklch(0.18 0.008 60 / 0.04);
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    transition-property: all;
+    transition-duration: 500ms;
+    transition-timing-function: ease;
+  }
+  .zen-card-hover:hover {
+    box-shadow:
+      0 2px 8px oklch(0.18 0.008 60 / 0.08),
+      0 8px 32px oklch(0.18 0.008 60 / 0.06),
+      0 0 0 1px oklch(0.18 0.008 60 / 0.05);
+    transform: translateY(-0.125rem);
+  }
+
+  .text-ink {
+    color: oklch(0.18 0.008 60);
+  }
+
+  .text-ink-light {
+    color: oklch(0.52 0.008 60);
+  }
+
+  .text-gold {
+    color: oklch(0.62 0.08 80);
+  }
+
+  .bg-parchment {
+    background-color: oklch(0.97 0.010 85);
+  }
+
+  .bg-paper {
+    background-color: oklch(0.99 0.006 85);
+  }
+
+  .scrollbar-zen::-webkit-scrollbar {
+    width: 4px;
+  }
+  .scrollbar-zen::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-zen::-webkit-scrollbar-thumb {
+    background: oklch(0.72 0.008 60 / 0.4);
+    border-radius: 2px;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection */
+::selection {
+  background: oklch(0.42 0.06 145 / 0.2);
+  color: oklch(0.18 0.008 60);
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid oklch(0.42 0.06 145 / 0.6);
+  outline-offset: 2px;
+}
+
+/* ═══════════════════════════════════════════
+   TOOL CONTENT DARK THEME
+   Applied inside .tool-content-dark wrapper
+   Overrides light-mode defaults for all tool pages
+═══════════════════════════════════════════ */
+
+.tool-content-dark textarea,
+.tool-content-dark input[type="text"],
+.tool-content-dark input[type="url"],
+.tool-content-dark input[type="number"],
+.tool-content-dark input[type="datetime-local"],
+.tool-content-dark input[type="color"],
+.tool-content-dark select {
+  background: oklch(0.18 0.008 60) !important;
+  border-color: oklch(1 0 0 / 0.10) !important;
+  color: oklch(0.88 0.008 85) !important;
+  font-size: 14px;
+}
+
+.tool-content-dark textarea::placeholder,
+.tool-content-dark input::placeholder {
+  color: oklch(0.40 0.008 60) !important;
+}
+
+.tool-content-dark textarea:focus,
+.tool-content-dark input:focus,
+.tool-content-dark select:focus {
+  border-color: oklch(1 0 0 / 0.22) !important;
+  outline: none;
+}
+
+/* Labels */
+.tool-content-dark label {
+  color: oklch(0.60 0.008 60) !important;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}
+
+/* Pre / code output blocks */
+.tool-content-dark pre {
+  background: oklch(0.16 0.008 60) !important;
+  border-color: oklch(1 0 0 / 0.08) !important;
+  color: oklch(0.82 0.008 85) !important;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+/* Card containers inside tools */
+.tool-content-dark .bg-card,
+.tool-content-dark [class*="bg-card"] {
+  background: oklch(0.18 0.008 60) !important;
+  border-color: oklch(1 0 0 / 0.09) !important;
+}
+
+/* Primary action buttons */
+.tool-content-dark button[class*="bg-foreground"],
+.tool-content-dark a[class*="bg-foreground"] {
+  background: oklch(0.88 0.008 85) !important;
+  color: oklch(0.14 0.008 60) !important;
+  font-size: 14px;
+}
+
+/* Secondary / outline buttons */
+.tool-content-dark button[class*="bg-card"],
+.tool-content-dark button[class*="border-border"] {
+  background: oklch(0.20 0.008 60) !important;
+  border-color: oklch(1 0 0 / 0.10) !important;
+  color: oklch(0.65 0.008 60) !important;
+  font-size: 14px;
+}
+
+/* Text colors */
+.tool-content-dark .text-foreground { color: oklch(0.88 0.008 85) !important; }
+.tool-content-dark .text-muted-foreground { color: oklch(0.52 0.008 60) !important; }
+.tool-content-dark h3 { color: oklch(0.85 0.008 85) !important; font-size: 16px; }
+.tool-content-dark p { font-size: 14px; line-height: 1.65; }
+
+/* Error states */
+.tool-content-dark .bg-red-50\/50 {
+  background: oklch(0.20 0.04 25 / 0.3) !important;
+  border-color: oklch(0.50 0.12 25 / 0.3) !important;
+}
+.tool-content-dark .text-red-600,
+.tool-content-dark .text-red-500 {
+  color: oklch(0.65 0.15 25) !important;
+}
+
+/* Success states */
+.tool-content-dark .bg-green-50\/50 {
+  background: oklch(0.20 0.04 145 / 0.3) !important;
+  border-color: oklch(0.50 0.10 145 / 0.3) !important;
+}
+
+/* Range input */
+.tool-content-dark input[type="range"] {
+  accent-color: oklch(0.72 0.08 80);
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Checkbox */
+.tool-content-dark input[type="checkbox"] {
+  accent-color: oklch(0.72 0.08 80);
+}
+
+/* Inline code */
+.tool-content-dark code {
+  background: oklch(0.20 0.008 60) !important;
+  color: oklch(0.78 0.008 85) !important;
+  font-size: 13px;
+}
+
+/* Mark / highlight */
+.tool-content-dark mark {
+  background: oklch(0.65 0.10 80 / 0.25) !important;
+  color: oklch(0.88 0.008 85) !important;
+  border-radius: 2px;
+}
+
+/* Dividers */
+.tool-content-dark .border-border,
+.tool-content-dark .border-b,
+.tool-content-dark .border-t {
+  border-color: oklch(1 0 0 / 0.08) !important;
+}
+
+/* Muted backgrounds */
+.tool-content-dark .bg-muted { background: oklch(0.20 0.008 60) !important; }
+.tool-content-dark .bg-accent { background: oklch(0.22 0.008 60) !important; }
+
+/* Spacing boost — make everything breathe more */
+.tool-content-dark .space-y-2 > * + * { margin-top: 10px; }
+.tool-content-dark .space-y-4 > * + * { margin-top: 18px; }
+.tool-content-dark .space-y-6 > * + * { margin-top: 26px; }
+
+/* ═══════════════════════════════════════════
+   Living background — not flat, not generic
+═══════════════════════════════════════════ */
+
+/* Radial gradient utility (Tailwind v4 doesn't ship bg-gradient-radial) */
+.bg-gradient-radial {
+  background-image: radial-gradient(var(--tw-gradient-stops));
+}
+
+/* Cinematic page body — warm parchment base */
+body {
+  background-color: oklch(0.97 0.010 85);
+}
+
+/* Atmospheric section transitions */
+section + section {
+  position: relative;
+}
+
+/* Ink watercolor edge — decorative horizontal rule between sections */
+.ink-rule {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    oklch(0.18 0.008 60 / 0.08) 20%,
+    oklch(0.18 0.008 60 / 0.12) 50%,
+    oklch(0.18 0.008 60 / 0.08) 80%,
+    transparent 100%
+  );
+}
+
+/* Floating note shadow — physical paper feel */
+.note-shadow {
+  box-shadow:
+    0 1px 2px oklch(0.18 0.008 60 / 0.04),
+    0 3px 10px oklch(0.18 0.008 60 / 0.06),
+    0 8px 28px oklch(0.18 0.008 60 / 0.05),
+    inset 0 1px 0 oklch(1 0 0 / 0.65);
+}
+
+/* Sunlight shaft animation */
+@keyframes shaft-breathe {
+  0%, 100% { opacity: 0.7; transform: skewX(-8deg) scaleX(1); }
+  50% { opacity: 1; transform: skewX(-8deg) scaleX(1.04); }
+}
+.sunlight-shaft {
+  animation: shaft-breathe 8s ease-in-out infinite;
+}
+
+/* Ambient dust float */
+@keyframes dust-float {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 0.6; }
+  100% { transform: translateY(-60px) translateX(12px); opacity: 0; }
+}
+
+/* Sakura drift */
+@keyframes sakura-drift {
+  0% { transform: translateY(-10px) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.7; }
+  90% { opacity: 0.4; }
+  100% { transform: translateY(100vh) rotate(360deg) translateX(40px); opacity: 0; }
+}
+
+/* Steam rise */
+@keyframes steam-rise {
+  0% { transform: translateY(0) scaleX(1); opacity: 0; }
+  30% { opacity: 0.5; }
+  100% { transform: translateY(-32px) scaleX(1.8); opacity: 0; }
+}
+
+/* Lantern sway */
+@keyframes lantern-sway {
+  0%, 100% { transform: rotate(-1.5deg); }
+  50% { transform: rotate(1.5deg); }
+}
+.lantern-sway {
+  animation: lantern-sway 5s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+/* Cursor glow — subtle warm light follows cursor */
+.cursor-glow {
+  pointer-events: none;
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    oklch(0.88 0.06 75 / 0.06) 0%,
+    transparent 70%
+  );
+  transform: translate(-50%, -50%);
+  transition: left 0.4s ease, top 0.4s ease;
+  z-index: 9999;
+  mix-blend-mode: multiply;
+}
+
+/* Typography refinements */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+/* Prevent layout shift on scroll */
+html {
+  overflow-x: hidden;
+}
+
+/* Focus Mode - Hide distractions, keep sidebar controls accessible */
+body.focus-mode .right-widgets,
+body.focus-mode .floating-panels,
+body.focus-mode .bottom-sections {
+  opacity: 0.08;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+body.focus-mode .right-widgets:hover {
+  opacity: 0.25;
+}
+
+/* Sidebar in focus mode: collapse to slim icon rail, always accessible */
+body.focus-mode aside {
+  width: 56px !important;
+  min-width: 56px !important;
+  transition: width 0.25s ease;
+  overflow: hidden;
+}
+
+/* Hide text labels and non-essential sidebar sections in focus mode */
+body.focus-mode aside .sidebar-label,
+body.focus-mode aside .sidebar-tagline,
+body.focus-mode aside .sidebar-quote,
+body.focus-mode aside .sidebar-logo-text {
+  display: none !important;
+}
+
+/* Keep focus toggle and settings icons visible and clickable */
+body.focus-mode aside .sidebar-focus-section,
+body.focus-mode aside .sidebar-settings {
+  pointer-events: auto !important;
+  opacity: 1 !important;
+}
+
+/* ═══════════════════════════════════════════
+   DARK THEME — global text contrast fixes
+   Ensures all text is readable on dark backgrounds
+═══════════════════════════════════════════ */
+
+/* Right widgets light-mode cards need inversion in dark theme */
+body.dark-theme .right-widgets-light-card {
+  background: oklch(0.18 0.008 60) !important;
+  border-color: oklch(1 0 0 / 0.08) !important;
+}
+
+/* Hero section headings are already light — no change needed */
+
+/* Footer text in dark theme */
+body.dark-theme footer p {
+  color: oklch(0.52 0.008 60) !important;
+}
+body.dark-theme footer span {
+  color: oklch(0.65 0.008 60) !important;
+}
+
+/* Floating focus-exit pill shown in focus mode */
+.focus-exit-pill {
+  display: none;
+}
+body.focus-mode .focus-exit-pill {
+  display: flex;
+}
+
+/* Dark Theme - Only affects mid section */
+body:not(.dark-theme) .tools-panel-container {
+  background: oklch(0.97 0.010 85) !important;
+}
+
+body:not(.dark-theme) .tools-panel-container .tool-card {
+  background: oklch(0.99 0.006 85) !important;
+  border-color: oklch(0.90 0.008 82 / 0.7) !important;
+}
+
+body:not(.dark-theme) .tools-panel-container .tool-card:hover {
+  background: oklch(0.97 0.010 82) !important;
+}
+
+body:not(.dark-theme) .tools-panel-container .tool-icon-bg {
+  background: oklch(0.93 0.010 82) !important;
+  border-color: oklch(0.86 0.010 80 / 0.5) !important;
+}
+
+body:not(.dark-theme) .tools-panel-container .tool-name {
+  color: oklch(0.22 0.008 60) !important;
+}
+
+body:not(.dark-theme) .tools-panel-container .tool-desc {
+  color: oklch(0.55 0.008 60) !important;
+}
+
+body:not(.dark-theme) .tools-panel-container .panel-header {
+  border-bottom-color: oklch(0.88 0.010 82 / 0.6) !important;
+}
+
+/* Dark theme styles for mid section */
+body.dark-theme .tools-panel-container {
+  background: oklch(0.16 0.008 60) !important;
+}
+
+body.dark-theme .tools-panel-container .tool-card {
+  background: oklch(0.18 0.008 60) !important;
+  border-color: oklch(1 0 0 / 0.10) !important;
+}
+
+body.dark-theme .tools-panel-container .tool-card:hover {
+  background: oklch(0.20 0.008 60) !important;
+}
+
+body.dark-theme .tools-panel-container .tool-icon-bg {
+  background: oklch(0.22 0.008 60) !important;
+  border-color: oklch(1 0 0 / 0.14) !important;
+}
+
+body.dark-theme .tools-panel-container .tool-icon-bg span {
+  color: oklch(0.58 0.008 60) !important;
+}
+
+body.dark-theme .tools-panel-container .tool-name {
+  color: oklch(0.88 0.008 85) !important;
+}
+
+body.dark-theme .tools-panel-container .tool-desc {
+  color: oklch(0.52 0.008 60) !important;
+}
+
+body.dark-theme .tools-panel-container .panel-header {
+  border-bottom-color: oklch(1 0 0 / 0.10) !important;
+}
+
+body.dark-theme .tools-panel-container .panel-title {
+  color: oklch(0.88 0.008 85) !important;
+}
+
+body.dark-theme .tools-panel-container .panel-link {
+  color: oklch(0.60 0.008 60) !important;
+}
+
+/* ═══════════════════════════════════════════
+   KAIZEN ATMOSPHERIC ENVIRONMENT
+   Living background — not flat, not generic
+═══════════════════════════════════════════ */
+
+.bg-gradient-radial {
+  background-image: radial-gradient(var(--tw-gradient-stops));
+}
+
+body {
+  background-color: oklch(0.13 0.008 60);
+}
+
+.ink-rule {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    oklch(0.18 0.008 60 / 0.08) 20%,
+    oklch(0.18 0.008 60 / 0.12) 50%,
+    oklch(0.18 0.008 60 / 0.08) 80%,
+    transparent 100%
+  );
+}
+
+.note-shadow {
+  box-shadow:
+    0 1px 2px oklch(0.18 0.008 60 / 0.04),
+    0 3px 10px oklch(0.18 0.008 60 / 0.06),
+    0 8px 28px oklch(0.18 0.008 60 / 0.05),
+    inset 0 1px 0 oklch(1 0 0 / 0.65);
+}
+
+@keyframes shaft-breathe {
+  0%, 100% { opacity: 0.7; transform: skewX(-8deg) scaleX(1); }
+  50% { opacity: 1; transform: skewX(-8deg) scaleX(1.04); }
+}
+.sunlight-shaft {
+  animation: shaft-breathe 8s ease-in-out infinite;
+}
+
+@keyframes lantern-sway {
+  0%, 100% { transform: rotate(-1.5deg); }
+  50% { transform: rotate(1.5deg); }
+}
+.lantern-sway {
+  animation: lantern-sway 5s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.cursor-glow {
+  pointer-events: none;
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    oklch(0.88 0.06 75 / 0.04) 0%,
+    transparent 70%
+  );
+  transform: translate(-50%, -50%);
+  transition: left 0.4s ease, top 0.4s ease;
+  z-index: 9999;
+  mix-blend-mode: screen;
+}
+
+html {
+  overflow-x: hidden;
+}
