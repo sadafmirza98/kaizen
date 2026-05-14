@@ -182,6 +182,7 @@ export default function ColorPalettePage() {
       title="Color Palette Generator"
       description="Generate harmonious color palettes — shades, complementary, analogous, and triadic."
       category="generators"
+      toolId="color-palette"
     >
       <ColorPaletteGenerator />
     </ToolLayout>

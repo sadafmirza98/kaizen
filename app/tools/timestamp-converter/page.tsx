@@ -148,6 +148,7 @@ export default function TimestampConverterPage() {
       title="Timestamp Converter"
       description="Convert between Unix timestamps and human-readable dates. Live clock included."
       category="converters"
+      toolId="timestamp-converter"
     >
       <TimestampConverter />
     </ToolLayout>

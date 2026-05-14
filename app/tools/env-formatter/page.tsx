@@ -140,6 +140,7 @@ export default function EnvFormatterPage() {
       title="Env Variable Formatter"
       description="Parse, validate, and format .env files. Highlights issues and normalizes formatting."
       category="generators"
+      toolId="env-formatter"
     >
       <EnvFormatter />
     </ToolLayout>

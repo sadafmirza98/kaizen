@@ -164,6 +164,7 @@ export default function MarkdownPreviewPage() {
       title="Markdown Preview"
       description="Write and preview Markdown with live rendering. Split view or full preview."
       category="formatters"
+      toolId="markdown-preview"
     >
       <MarkdownPreview />
     </ToolLayout>

@@ -120,6 +120,7 @@ export default function UuidGeneratorPage() {
       title="UUID Generator"
       description="Generate cryptographically random v4 UUIDs for unique identifiers."
       category="generators"
+      toolId="uuid-generator"
     >
       <UuidGenerator />
     </ToolLayout>

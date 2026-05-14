@@ -174,6 +174,7 @@ export default function RegexTesterPage() {
       title="Regex Tester"
       description="Test and debug regular expressions with live matching and match details."
       category="web"
+      toolId="regex-tester"
     >
       <RegexTester />
     </ToolLayout>

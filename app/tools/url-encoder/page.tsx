@@ -121,6 +121,7 @@ export default function UrlEncoderPage() {
       title="URL Encoder / Decoder"
       description="Encode and decode URL components and query strings using percent-encoding."
       category="converters"
+      toolId="url-encoder"
     >
       <UrlEncoder />
     </ToolLayout>

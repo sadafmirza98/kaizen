@@ -154,6 +154,7 @@ export default function JwtDecoderPage() {
       title="JWT Decoder"
       description="Decode and inspect JWT tokens. Header, payload, and expiry status — all at a glance."
       category="converters"
+      toolId="jwt-decoder"
     >
       <JwtDecoder />
     </ToolLayout>

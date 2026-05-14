@@ -238,6 +238,7 @@ export default function ApiTesterPage() {
       title="API Tester"
       description="Test HTTP endpoints with custom headers, request bodies, and response inspection."
       category="web"
+      toolId="api-tester"
     >
       <ApiTester />
     </ToolLayout>

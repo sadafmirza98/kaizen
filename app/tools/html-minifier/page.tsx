@@ -105,6 +105,7 @@ export default function HtmlMinifierPage() {
       title="HTML Minifier"
       description="Minify HTML by removing comments, collapsing whitespace, and reducing file size."
       category="formatters"
+      toolId="html-minifier"
     >
       <HtmlMinifier />
     </ToolLayout>

@@ -180,6 +180,7 @@ export default function CronVisualizerPage() {
       title="Cron Visualizer"
       description="Visualize and understand cron expressions in plain English with next run times."
       category="web"
+      toolId="cron-visualizer"
     >
       <CronVisualizer />
     </ToolLayout>

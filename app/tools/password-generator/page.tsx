@@ -165,6 +165,7 @@ export default function PasswordGeneratorPage() {
       title="Password Generator"
       description="Generate strong, cryptographically random passwords with custom rules."
       category="generators"
+      toolId="password-generator"
     >
       <PasswordGenerator />
     </ToolLayout>

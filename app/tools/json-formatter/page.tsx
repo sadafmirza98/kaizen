@@ -136,6 +136,7 @@ export default function JsonFormatterPage() {
       title="JSON Formatter"
       description="Beautify, minify, and validate JSON with instant feedback."
       category="formatters"
+      toolId="json-formatter"
     >
       <JsonFormatter />
     </ToolLayout>

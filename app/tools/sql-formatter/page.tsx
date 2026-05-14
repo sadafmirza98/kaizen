@@ -127,6 +127,7 @@ export default function SqlFormatterPage() {
       title="SQL Formatter"
       description="Format and beautify SQL queries for readability with keyword highlighting."
       category="formatters"
+      toolId="sql-formatter"
     >
       <SqlFormatter />
     </ToolLayout>

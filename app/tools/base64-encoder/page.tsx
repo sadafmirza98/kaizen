@@ -124,6 +124,7 @@ export default function Base64EncoderPage() {
       title="Base64 Encoder / Decoder"
       description="Encode plain text to Base64 or decode Base64 strings back to text."
       category="converters"
+      toolId="base64-encoder"
     >
       <Base64Encoder />
     </ToolLayout>

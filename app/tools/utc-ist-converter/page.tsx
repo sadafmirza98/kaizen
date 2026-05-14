@@ -148,6 +148,7 @@ export default function UtcIstConverterPage() {
       title="UTC ↔ IST Converter"
       description="Convert between UTC and Indian Standard Time (UTC+5:30) instantly."
       category="converters"
+      toolId="utc-ist-converter"
     >
       <UtcIstConverter />
     </ToolLayout>

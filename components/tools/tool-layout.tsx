@@ -2,6 +2,7 @@
 
 import { Sidebar } from "@/components/layout/sidebar";
 import { MobileNav } from "@/components/layout/mobile-nav";
+import { ToolSeoContent } from "@/components/tools/tool-seo-content";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
@@ -10,10 +11,11 @@ interface ToolLayoutProps {
   title: string;
   description: string;
   category: string;
+  toolId?: string;
   children: React.ReactNode;
 }
 
-export function ToolLayout({ title, description, category, children }: ToolLayoutProps) {
+export function ToolLayout({ title, description, category, toolId, children }: ToolLayoutProps) {
   return (
     <div
       className="flex min-h-screen"
@@ -89,6 +91,9 @@ export function ToolLayout({ title, description, category, children }: ToolLayou
                 {children}
               </ToolContentTheme>
             </motion.div>
+
+            {/* SEO content — use cases, FAQs, related tools */}
+            {toolId && <ToolSeoContent toolId={toolId} />}
           </div>
 
           {/* Footer */}
