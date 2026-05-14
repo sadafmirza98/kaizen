@@ -114,13 +114,18 @@ export function BottomSections() {
         transition={{ duration: 0.5, delay: 0.08 }}
         style={{ background: panelBg, borderRadius: 16, border: `1px solid ${panelBorder}`, boxShadow: "0 2px 16px oklch(0 0 0 / 0.20)", overflow: "hidden" }}
       >
-        {/* Header */}
-        <div className="flex items-center justify-between px-5 py-3.5" style={{ borderBottom: `1px solid ${headerBorder}` }}>
-          <div className="flex items-center gap-2">
-            <span style={{ color: titleColor, fontFamily: "var(--font-heading)", fontSize: 15, fontWeight: 600 }}>Developer Playbook</span>
-            <span style={{ color: subColor, fontSize: 13 }}>✦</span>
+        {/* Developer Playbook header — ai-bg, same height as AI Suite */}
+        <div className="relative overflow-hidden px-5" style={{ minHeight: 90 }}>
+          <div className="absolute inset-0" style={{ backgroundImage: "url('/ai-bg.png')", backgroundSize: "cover", backgroundPosition: "center", zIndex: 0 }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(100deg, oklch(0.10 0.018 90 / 0.88) 0%, oklch(0.13 0.020 100 / 0.72) 60%, oklch(0.10 0.015 85 / 0.50) 100%)", zIndex: 1 }} />
+          <div className="absolute right-4 top-0 bottom-0 w-32 pointer-events-none" style={{ background: "radial-gradient(ellipse at right, oklch(0.72 0.08 80 / 0.18) 0%, transparent 70%)", zIndex: 2 }} />
+          <div className="relative flex flex-col justify-center h-full py-4" style={{ zIndex: 3 }}>
+            <div className="flex items-center gap-2 mb-1">
+              <span style={{ color: "oklch(0.88 0.018 75)", fontFamily: "var(--font-heading)", fontSize: 15, fontWeight: 600, textShadow: "0 1px 8px oklch(0 0 0 / 0.5)" }}>Developer Playbook</span>
+              <span style={{ color: "oklch(0.72 0.08 80)", fontSize: 13 }}>✦</span>
+            </div>
+            <p style={{ color: "oklch(0.68 0.008 80)", fontSize: 13, textShadow: "0 1px 6px oklch(0 0 0 / 0.4)" }}>Visual guides to complex developer topics.</p>
           </div>
-          <span style={{ color: subColor, fontSize: 12 }}>Visual guides to complex topics.</span>
         </div>
 
         {/* Topics grid */}

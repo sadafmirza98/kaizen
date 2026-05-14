@@ -26,28 +26,32 @@ export function ToolsPanel() {
         className="tools-panel-container rounded-2xl overflow-hidden"
         style={{
           background: "oklch(0.82 0.03 70)",
+          border: "1px solid oklch(0.72 0.025 70 / 0.8)",
           boxShadow: "0 4px 32px oklch(0 0 0 / 0.35), 0 1px 0 oklch(1 0 0 / 0.08)",
         }}
       >
-        {/* Panel header */}
-        <div
-          className="panel-header flex items-center justify-between px-5 py-4"
-          style={{ borderBottom: "1px solid oklch(0.88 0.010 82 / 0.6)" }}
-        >
-          <div className="flex items-center gap-2">
-            <TrendingUp className="w-4 h-4" style={{ color: "oklch(0.52 0.008 60)" }} />
-            <span className="panel-title" style={{ color: "oklch(0.22 0.008 60)", fontSize: 15, fontWeight: 500 }}>
-              Popular Tools
-            </span>
+        {/* Panel header — ai-bg image, consistent with other widget headers */}
+        <div className="relative overflow-hidden px-5" style={{ minHeight: 90 }}>
+          <div className="absolute inset-0" style={{ backgroundImage: "url('/ai-bg.png')", backgroundSize: "cover", backgroundPosition: "center", zIndex: 0 }} />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(100deg, oklch(0.10 0.018 90 / 0.88) 0%, oklch(0.13 0.020 100 / 0.72) 60%, oklch(0.10 0.015 85 / 0.50) 100%)", zIndex: 1 }} />
+          <div className="absolute right-4 top-0 bottom-0 w-32 pointer-events-none" style={{ background: "radial-gradient(ellipse at right, oklch(0.72 0.08 80 / 0.18) 0%, transparent 70%)", zIndex: 2 }} />
+          <div className="relative flex flex-col justify-center h-full py-4" style={{ zIndex: 3 }}>
+            <div className="flex items-center gap-2 mb-1">
+              <TrendingUp className="w-4 h-4" style={{ color: "oklch(0.72 0.08 80)" }} />
+              <span className="panel-title" style={{ color: "oklch(0.88 0.018 75)", fontSize: 15, fontWeight: 600, fontFamily: "var(--font-heading)", textShadow: "0 1px 8px oklch(0 0 0 / 0.5)" }}>
+                Popular Tools
+              </span>
+            </div>
+            <p style={{ color: "oklch(0.68 0.008 80)", fontSize: 13, textShadow: "0 1px 6px oklch(0 0 0 / 0.4)" }}>A curated suite of developer tools crafted to reduce friction, increase pace and keep developers in ZEN.</p>
+            <Link
+              href="/tools"
+              className="panel-link absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-1.5 transition-colors hover:opacity-70"
+              style={{ color: "oklch(0.72 0.008 80)", fontSize: 13 }}
+            >
+              View all tools
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
-          <Link
-            href="/tools"
-            className="panel-link flex items-center gap-1.5 transition-colors hover:opacity-70"
-            style={{ color: "oklch(0.52 0.008 60)", fontSize: 13 }}
-          >
-            View all tools
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
         </div>
 
         {/* Tools grid — 5 columns per row on desktop */}
